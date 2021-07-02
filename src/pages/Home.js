@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import '../assets/styles/home.css';
 import { RightOutlined } from '@ant-design/icons';
-import { Popdetails, Section, Section2 } from '../components';
+import { Popdetails, Section, Section2, Footer } from '../components';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -262,6 +262,7 @@ const Home = () => {
              </div>
            </section>
            </section>
+           <Footer/>
         </div>
     );
 }
