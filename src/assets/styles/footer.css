@@ -1,0 +1,39 @@
+.parent-footer-container{
+
+	height:200px;
+	display: flex;
+	align-items: flex-start;
+	justify-content: start;
+	padding-top: 50px;
+}
+ul{
+	list-style: none;
+}
+.color-white{
+	color: white;
+}
+.color-offwhite{
+	color: rgba(225, 225, 225, 0.5);
+}
+.style-1{
+	padding-top: 5px;
+}
+.line-style-1{
+	line-height: 30px;
+}
+.footer-container{
+	padding-left: 70px;
+	padding-right: 70px;
+}
+.des-p{
+	padding-left: 70px;
+}
+.ftr{
+   background-color: #082d41;
+   padding-bottom: 50px;
+   padding-top: 50px;
+}
+.style-1:hover{
+	color: white;
+	cursor: pointer;
+}
