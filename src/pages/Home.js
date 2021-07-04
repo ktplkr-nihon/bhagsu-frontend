@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import FadeIn from 'react-fade-in';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import '../assets/styles/home.css';
 import { RightOutlined } from '@ant-design/icons';
 import { Popdetails, Section, Section2, Footer } from '../components';
@@ -6,12 +9,13 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 const Home = () => {
-  var det = "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.";
-  const[value, setValue] = useState(0);
-  const[name, setName] = useState("");
-  const[detail, setDetail] = useState("");
-  const[hours, setHours] = useState("");
-  const[cuisine, setCuisine] = useState("");
+    AOS.init();
+    var det = "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.";
+    const [value, setValue] = useState(0);
+    const [name, setName] = useState("");
+    const [detail, setDetail] = useState("");
+    const [hours, setHours] = useState("");
+    const [cuisine, setCuisine] = useState("");
     var settings = {
         dots: false,
         infinite: true,
@@ -57,7 +61,7 @@ const Home = () => {
             document.getElementsByClassName("parent-sec-con")[0].style.display = "none";
             document.getElementsByClassName("res-img-1")[1].style.opacity = "1";
             document.getElementsByClassName("pop-container")[0].style.display = "flex";
-             setName("Le Bar");
+            setName("Le Bar");
             setDetail(det);
             setHours("7:00am – 11:30 am | 5:30pm – 21:30pm (last order)");
             setCuisine("Casual alpine dining");
@@ -104,15 +108,18 @@ const Home = () => {
             setValue(3);
         });
     });
+
+ window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+}
     const placeImages = () => {
-         const array = [];
-         for(var i =0; i<10; i++)
-         {
-           array.push(
-               <img className={`gallery-img gallery-img-${i}`} alt="" src="https://images.unsplash.com/photo-1549455663-fcc2db26bc7f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" />
+        const array = [];
+        for (var i = 0; i < 10; i++) {
+            array.push(
+                <img className={`gallery-img gallery-img-${i}`}  data-aos="fade-up" alt="" src="https://images.unsplash.com/photo-1549455663-fcc2db26bc7f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" />
             );
-         }
-         return array;
+        }
+        return array;
     }
     return (
         <div className="homepage-container">
@@ -123,7 +130,7 @@ const Home = () => {
                 <div className="right-line"></div>
               </div>
               <div className="sub-heading">
-                <p className="header-sub-heading"><span className="t-1">Magical Place</span><br/> <span className="inner-sub">in</span> McLeodGanj</p>
+                <FadeIn transitionDuration="2000"><p className="header-sub-heading"><span className="t-1">Magical Place</span><br/> <span className="inner-sub">in</span> McLeodGanj</p></FadeIn>
                 <div className="header-exp">
                 <p className="exp-btn">Explore More</p>
                 <RightOutlined className="right-arrow"/>
@@ -131,24 +138,26 @@ const Home = () => {
               </div>
            </section>
            <section className="max-parent-container">
-           <Section/>
+           <Section />
            <section className="room-container">
              <div>
-               <div className="room-header">
+               <div className="room-header" data-aos="fade-up">
                   <p>0 2</p>
                     <div className="line-style"></div>
                     <p>Explore</p>
                </div>
-               <p className="main-r-heading">ROOMS & SUITE</p>
+               <p className="main-r-heading" data-aos="fade-up">ROOMS & SUITE</p>
              </div>
-             <div className="text-r-container">
+             <div className="text-r-container"  data-aos="fade-up">
              <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
              </div>
-             <div className="carousel-container">
+             <div className="carousel-container" data-aos="fade-right"  data-aos-delay="200">
             <Slider 
             className="slider"
-            {...settings}>
-      <div className="room-card">
+            {...settings}
+        
+            >
+      <div className="room-card" >
         <div className="room-img-container">
         <img className="room-img" src="https://images.unsplash.com/photo-1549455663-fcc2db26bc7f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" />
         </div>
@@ -205,7 +214,7 @@ const Home = () => {
     </Slider>
              </div>
            </section>
-           <section className="sec-3">
+           <section className="sec-3" data-aos="fade-up">
            <div className="img-container">
              <img  className="res-img-1" src="https://images.unsplash.com/photo-1549455663-fcc2db26bc7f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" />
            </div>
@@ -245,24 +254,24 @@ const Home = () => {
            </section>
            <Section2/>
            <section className="contact-section">
-             <div className="contact-parent-container">
+             <div className="contact-parent-container" data-aos="fade-up" >
                <p className="contact-line">If you have any<br/> question feel free to<br/> contact us!</p>
                <button className="contact-btn">Contact Us</button>
              </div>
            </section>
            <section className="gallery-section">
-             <div className="gallery-header">
+             <div className="gallery-header" data-aos="fade-up" >
                <p>0 5</p>
                     <div className="line-style"></div>
                     <p>Gallery</p>
              </div>
-             <p className="gallery-heading">Checkout Our Images</p>
+             <p className="gallery-heading"  data-aos="fade-up">Checkout Our Images</p>
              <div className="grid-parent">
                {placeImages()}
              </div>
            </section>
-           </section>
            <Footer/>
+           </section>
         </div>
     );
 }

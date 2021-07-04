@@ -1,8 +1,11 @@
 import React from 'react';
+import FadeIn from 'react-fade-in';
+import AOS from 'aos';
 import { RightOutlined } from '@ant-design/icons';
 const Section2 = () => {
+   AOS.init();
     return (
-        <section className="sec-2">
+        <section className="sec-2" data-aos="fade-up">
               <div className="welcome-container">
                 <div className="welcome-p-1">
                   <div className="wel-cont-1">
