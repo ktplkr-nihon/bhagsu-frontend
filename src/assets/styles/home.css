@@ -3,8 +3,7 @@
 }
 
 .homepage-container{
-	background:black;
-    height: 100vh;
+    max-height: inherit;
     background-repeat: no-repeat;
     background-size: cover;
 

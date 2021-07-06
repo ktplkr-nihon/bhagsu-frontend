@@ -109,9 +109,7 @@ const Home = () => {
         });
     });
 
- window.onbeforeunload = function () {
-  window.scrollTo(0, 0);
-}
+ 
     const placeImages = () => {
         const array = [];
         for (var i = 0; i < 10; i++) {
@@ -270,7 +268,6 @@ const Home = () => {
                {placeImages()}
              </div>
            </section>
-           <Footer/>
            </section>
         </div>
     );

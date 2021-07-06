@@ -8,14 +8,15 @@ const Nav = () => {
   const OpenMenu = () => {
       if(menuOpen == false){
       document.getElementsByClassName("menu-container")[0].style.top = "0";
-      document.getElementsByClassName("max-parent-container")[0].style.display = "none";
+      setTimeout(function(){document.getElementsByClassName("ctr-ex")[0].style.display = "none";}, 1000);
+      
       setMenuOpen(true);
         document.getElementsByClassName("text-menu")[0].style.transform = "translate3d(0,-100%,0)";
         document.getElementsByClassName("text-menu")[1].style.transform = "translate3d(0,-100%,0)";
     }
     if(menuOpen == true){
       document.getElementsByClassName("menu-container")[0].style.top = "-800px"
-      document.getElementsByClassName("max-parent-container")[0].style.display = "block";
+      document.getElementsByClassName("ctr-ex")[0].style.display = "block";
       setMenuOpen(false);
       document.getElementsByClassName("text-menu")[0].style.transform = "translate3d(0,0%,0)";
         document.getElementsByClassName("text-menu")[1].style.transform = "translate3d(0,0%,0)";
