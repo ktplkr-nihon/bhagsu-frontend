@@ -1,2 +1,3 @@
 import Home from './Home.js';
-export { Home };
+import Contactus from './Contactus.js';
+export { Home, Contactus };
