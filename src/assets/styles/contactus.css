@@ -1,0 +1,11 @@
+.contact-header{
+	display: flex;
+	justify-content: center;
+	padding-top: 50px;
+}
+.header-txt{
+	padding-top: 20px;
+	padding-bottom: 20px;
+    font-size: 5em;
+    font-weight: 600;
+}
